@@ -1,0 +1,310 @@
+@font-face { font-family: Inter; src: url('../font/Inter.ttf'); }
+
+:root {
+    --max-width: 1200px;
+    --header-height: 70px;
+
+    --primary-color: 10, 104, 210;
+    --background-color: 255, 255, 255;
+    --text-color: 50, 50, 50;
+
+    --grid-gap: 24px;
+
+    --card-x-padding: 36px;
+    --card-y-padding: 28px;
+
+    --radius: 26px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    
+    background-color: rgb(var(--background-color));
+    color: rgb(var(--text-color));
+
+    line-height: 1.8;
+}
+body.no-scroll {
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+}
+
+.app {
+    max-width: var(--max-width);
+    margin: auto;
+
+    padding: var(--header-height) var(--grid-gap) 0 var(--grid-gap);
+}
+
+.ref {
+    position: absolute;
+    visibility: hidden;
+    margin-top: calc(var(--header-height) * -1);
+}
+
+.rounded {
+    border-radius: var(--radius);
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+
+    max-width: var(--max-width);
+    height: var(--header-height);
+
+    padding: 0 var(--grid-gap);
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgba(var(--background-color), 0.8);
+    backdrop-filter: blur(8px);
+}
+
+header > div > a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    text-decoration: none;
+}
+
+header > div > a > span {
+    font-weight: 600;
+    color: rgb(var(--text-color));
+}
+
+header img {
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+}
+
+header > nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+header > nav > a {
+    color: rgb(var(--text-color));
+    opacity: 0.5;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+header > nav > a:hover, header > nav > a.active {
+    opacity: 1;
+}
+
+.sidebar {
+    position: fixed;
+    top: var(--header-height);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    overflow-y: auto;
+
+    transform: translateX(100%);
+    background-color: rgb(var(--background-color));
+
+    transition: 0.2s;
+}
+
+.sidebar.opened {
+    opacity: 1;
+    transform: translateX(0);
+
+    transition: 0.4s cubic-bezier(0, 1, 0.5, 1);
+}
+
+.sidebar > nav {
+    display: flex;
+    flex-direction: column;
+
+    gap: var(--grid-gap);
+    padding: var(--grid-gap);
+}
+
+.sidebar > nav > a {
+    color: rgb(var(--text-color));
+    text-decoration: none;
+
+    font-size: 26px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.sidebar > nav > a:hover {
+    color: rgb(var(--primary-color));
+}
+
+.section {
+    background-color: rgb(var(--primary-color), 0.1);
+    border-radius: var(--radius);
+    padding: 34px 40px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--grid-gap);
+
+    position: relative;
+    margin-bottom: var(--grid-gap);
+    overflow: hidden;
+}
+
+.section .shapes {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    pointer-events: none;
+}
+.section .shapes > * {
+    fill: rgba(var(--primary-color), 0.2);
+    transition-timing-function: ease-out;
+}
+
+.section .text {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+}
+
+.section .text > p {
+    line-height: 28px;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.section .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 10px;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--grid-gap);
+    margin-bottom: var(--grid-gap);
+}
+
+.projects > .project {
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(var(--background-color));
+
+    flex: 1 1 400px;
+    border-radius: var(--radius);
+    text-decoration: none;
+}
+
+.projects > .project * {
+    cursor: pointer;
+}
+
+.projects > .project > .background {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    opacity: 0.1;
+
+    transition: 0.2s ease-in-out;
+}
+
+.projects > .project:hover > .background {
+    opacity: 0.12;
+    cursor: pointer;
+}
+
+.projects > .project > .infos {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    padding: var(--card-y-padding) var(--card-x-padding) 0 var(--card-x-padding);
+}
+
+.projects > .project > .infos > svg {
+    transition: 0.2s ease-in-out;
+}
+
+.projects > .project:hover > .infos > svg {
+    transform: translateX(4px);
+}
+
+.projects > .project > .content {
+    position: relative;
+    z-index: 2;
+
+    height: 350px;
+    background-size: cover;
+
+    margin: 20px 0 0 var(--card-x-padding);
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 20px;
+
+    box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.08), inset -4px -4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.projects > .project > .content.mobile {
+    box-shadow: none !important;
+    margin: 20px 30px 0 30px !important;
+}
+
+.modal .modal-content img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 900px) {
+    .section > .shapes {
+        display: none;
+    }
+
+    .projects {
+        flex-wrap: wrap;
+    }
+
+    .projects > .project {
+        flex-basis: 100%;
+    }
+}
