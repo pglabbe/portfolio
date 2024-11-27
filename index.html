@@ -37,8 +37,6 @@
                         {{ $trans(item.key) }}
                     </a>
                 </template>
-
-                <!-- <a href="" @click="switchLocale()">{{ $trans("localeSwitch") }}</a> -->
             </nav>
     
             <nav v-else>
@@ -58,8 +56,6 @@
                 <template v-for="(item, index) in menuItems">
                     <a :href="item.link" @click="closeMenu()">{{ $trans(item.key) }}</a>
                 </template>
-                
-                <!-- <a href="" @click="switchLocale()">{{ $trans("localeSwitch") }}</a> -->
             </nav>
         </div>
     
@@ -157,7 +153,7 @@
             <div class="modal-header" @click="closeProject()"></div>
 
             <div v-if="selectedProject" class="modal-content">
-                <div class="sticky d-flex justify-between align-center">
+                <div class="sticky d-flex justify-between align-center gap-12">
                     <div>
                         <h2>{{ $trans(`project.${selectedProject.key}.title`) }}</h2>
                         <p class="opacity-50">{{ $trans(`project.${selectedProject.key}.subtitle`) }}</p>
@@ -184,7 +180,8 @@
                 
                 <template v-for="image in selectedProject.images ?? []">
                     <div>
-                        <img :src="`images/${selectedProject.key}/${image.src}`" :alt="image.alt ?? ''">
+                        <img :src="`images/${selectedProject.key}/${image.src}`" :alt="image.alt ?? ''"
+                             @click="window.open(`images/${selectedProject.key}/${image.src}`, '_blank')" style="cursor: zoom-in;">
                     </div>
                 </template>
 
@@ -211,19 +208,19 @@
                 <div v-if="selectedProject.link || selectedProject.prototypeLink">
                     <p class="weight-bold mb-4">{{ $trans("project.links") }}</p>
 
-                    <div class="d-flex gap-12">
-                        <a v-if="selectedProject.link" :href="selectedProject.link" target="_blank" class="btn primary">
+                    <div class="d-flex flex-wrap gap-12">
+                        <a v-if="selectedProject.link" :href="selectedProject.link" target="_blank" class="btn primary" :class="{'flex-grow-1': screen.mobile}">
                             {{ $trans("project.view") }}
                         </a>
     
-                        <a v-if="selectedProject.prototypeLink" :href="selectedProject.prototypeLink" target="_blank" class="btn">
+                        <a v-if="selectedProject.prototypeLink" :href="selectedProject.prototypeLink" target="_blank" class="btn" :class="{'flex-grow-1': screen.mobile}">
                             {{ $trans("project.viewPrototype") }}
                         </a>
                     </div>
                 </div>
 
                 <div>
-                    <div class="section d-flex flex-row justify-between align-center">
+                    <div class="section d-flex flex-wrap flex-row justify-between align-center">
                         <div>
                             <h2 class="mb-8">{{ $trans("project.workTogether.title") }}</h2>
 

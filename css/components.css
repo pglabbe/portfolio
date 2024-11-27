@@ -8,6 +8,8 @@
     fill: rgb(var(--background-color));
 
     text-decoration: none;
+    white-space: nowrap;
+    min-width: fit-content;
     font-weight: 500;
     cursor: pointer;
 
@@ -169,5 +171,5 @@
 .item-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 60px;
+    gap: 28px 60px;
 }

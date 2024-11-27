@@ -176,7 +176,7 @@ header > nav > a:hover, header > nav > a.active {
 
     display: flex;
     flex-direction: column;
-    row-gap: var(--grid-gap);
+    gap: var(--grid-gap);
 
     position: relative;
     margin-bottom: var(--grid-gap);
@@ -306,5 +306,9 @@ header > nav > a:hover, header > nav > a.active {
 
     .projects > .project {
         flex-basis: 100%;
+    }
+
+    .projects > .project > .content.mobile {
+        margin: 20px 0 0 30px !important;
     }
 }
