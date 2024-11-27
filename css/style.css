@@ -196,13 +196,21 @@ header > nav > a:hover, header > nav > a.active {
     transition-timing-function: ease-out;
 }
 
+.section h2 {
+    font-size: 1.8rem;
+}
+
+.section h3 {
+    font-size: 1.4rem;
+}
+
 .section .text {
     display: flex;
     flex-direction: column;
     row-gap: 4px;
 }
 
-.section .text > p {
+.section .text p {
     line-height: 28px;
     font-weight: 500;
     opacity: 0.8;
@@ -215,19 +223,86 @@ header > nav > a:hover, header > nav > a.active {
     padding-top: 10px;
 }
 
-.projects {
+.about-section {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 12px;
+    padding-bottom: 60px !important;
+}
+
+.about-section > div:first-child {
+    min-width: 200px;
+}
+
+.about-section > div:first-child p {
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 2.2rem;
+    color: rgb(var(--primary-color));
+}
+
+.about-section > div:last-child {
+    flex: 1 1 500px;
+}
+
+.journey-list {
+    display: flex;
+    flex-direction: column;
+
+    row-gap: 30px;
+}
+
+.journey-list > .journey {
+    display: flex;
+    flex-direction: column;
+}
+
+.journey-list > .journey > .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.journey-list > .journey > .subtitle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0 12px;
+    margin-bottom: 8px;
+}
+
+.journey-list > .journey > .subtitle > .location {
+    color: rgb(var(--primary-color));
+}
+
+.journey-list > .journey > .subtitle > .date {
+    opacity: 0.5;
+}
+
+/* .journey-list > .journey > .text {
+
+} */
+
+.row {
     display: flex;
     flex-wrap: wrap;
     gap: var(--grid-gap);
+}
+
+.row > div {
+    flex: 1 1 400px;
+    margin-bottom: 0;
+}
+
+.projects {
     margin-bottom: var(--grid-gap);
 }
 
 .projects > .project {
     position: relative;
     overflow: hidden;
-    background-color: rgb(var(--background-color));
+    background-color: rgba(var(--background-color), 0.5);
 
-    flex: 1 1 400px;
     border-radius: var(--radius);
     text-decoration: none;
 }
@@ -281,7 +356,7 @@ header > nav > a:hover, header > nav > a.active {
     border-top-left-radius: 12px;
     border-bottom-right-radius: 20px;
 
-    box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.08), inset -4px -4px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.08), inset -4px -4px 8px rgba(0, 0, 0, 0.03);
 }
 
 .projects > .project > .content.mobile {
@@ -296,8 +371,16 @@ header > nav > a:hover, header > nav > a.active {
 }
 
 @media (max-width: 900px) {
+    :root {
+        --grid-gap: 18px;
+    }
+
     .section > .shapes {
-        display: none;
+        opacity: 0.3 !important;
+    }
+
+    .section .text {
+        row-gap: 12px;
     }
 
     .projects {

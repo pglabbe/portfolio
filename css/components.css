@@ -109,6 +109,7 @@
 }
 
 .modal .modal-close {
+    display: flex;
     cursor: pointer;
     opacity: 0.5;
     transition: 0.2s;
@@ -129,7 +130,7 @@
     max-width: var(--max-width);
     margin: auto;
 
-    padding: 0 24px 28px 24px;
+    padding: 0 var(--grid-gap) 28px var(--grid-gap);
     background-color: rgb(var(--background-color));
 }
 
@@ -149,6 +150,12 @@
 }
 
 /* Tags */
+.tag-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
 .tag {
     background-color: rgba(var(--primary-color), 0.1);
     color: rgb(var(--primary-color));
@@ -157,12 +164,6 @@
     font-weight: 500;
     border-radius: 100px;
     padding: 4px 20px;
-}
-
-.tag-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
 }
 
 .tag.grey {

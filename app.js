@@ -29,12 +29,12 @@ PetiteVue.createApp({
             link: "#"
         },
         {
-            key: "menu.projects",
-            link: "#projects"
-        },
-        {
             key: "menu.about",
             link: "#about"
+        },
+        {
+            key: "menu.projects",
+            link: "#projects"
         },
         {
             key: "menu.contact",
@@ -59,6 +59,20 @@ PetiteVue.createApp({
     },
 
     contactLink: "mailto:piergabriel.labbe@gmail.com",
+
+    aboutOpened: false,
+    openAbout()
+    {
+        document.getElementById("about-modal").scrollTop = 0;
+        
+        this.aboutOpened = true;
+        this.preventScroll();
+    },
+    closeAbout()
+    {
+        this.aboutOpened = false;
+        this.allowScroll();
+    },
     
     projectOpened: false,
     selectedProject: null,
@@ -70,9 +84,9 @@ PetiteVue.createApp({
             mobile: true,
             year: "2024",
             tags: ["mobile", "designUIX"],
-            techs: ["figma"],
+            techs: ["Figma"],
             images: [
-                {src: `mockup-${$locale}.jpg`, alt: "Mockup"},
+                {src: `mockup-fr.jpg`, alt: "Mockup"},
                 {src: "logo.jpg", alt: "Logo"}
             ],
             link: "https://www.figma.com/proto/F8Ua3ObJj2iX7tHXL1Ilht/SaveUp?page-id=0%3A1&node-id=115-52&node-type=canvas&viewport=21%2C223%2C0.24&t=jhXtdvaFzGm8n9fY-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=72%3A27",
@@ -83,7 +97,7 @@ PetiteVue.createApp({
             color: "#012141",
             year: "2022 - 2024",
             tags: ["app", "designUIX", "web"],
-            techs: ["vuejs", "php"],
+            techs: ["Vue.js", "PHP"],
             images: [
                 {src: `login-${$locale}.jpg`, alt: "Login"},
                 {src: `dashboard-${$locale}.jpg`, alt: "Dashboard"},
@@ -97,7 +111,7 @@ PetiteVue.createApp({
             color: "#f2430a",
             year: "2022 - 2024",
             tags: ["website", "designUIX", "web"],
-            techs: ["wp"],
+            techs: ["Wordpress"],
             images: [
                 {src: `website-${$locale}.jpg`, alt: "Website"}
             ],
@@ -118,6 +132,15 @@ PetiteVue.createApp({
         this.projectOpened = false;
         this.allowScroll();
     },
+
+    getProjectAnimationDelay(index)
+    {
+        if(screen.mobile || index >= 2) {
+            return index % 2 === 0 ? 0 : 100;
+        }
+
+        return index === 1 ? 500 : 400;
+    }
 }).mount();
 
 AOS.init({

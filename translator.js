@@ -1,30 +1,72 @@
 const $allTranslations = {
     fr: {
-        docTitle: "PGL - Designer UI/UX, Développeur Web",
+        title: "PGL - Designer UI/UX, Développeur Web",
+        description: "Bienvenue, moi c'est Pier-Gabriel, je suis designer UI/UX et développeur web, je transforme vos idées en projet réel.",
+        
         localeSwitch: "English",
+        language: {
+            fr: "Français",
+            en: "Anglais"
+        },
         menu: {
             home: "Accueil",
-            projects: "Projets",
             about: "À propos",
+            projects: "Projets",
             contact: "Contact"
         },
+
         action: {
             contactMe: "Contactez-moi"
         },
+
         intro: {
-            // title: "Salut! Moi c'est Pier-Gabriel",
-            // title: "Enchanté, moi c'est Pier-Gabriel",
             title: "Bienvenue, moi c'est Pier-Gabriel",
-            text: "<p>Je suis <strong>designer UI/UX</strong> et <strong>développeur web</strong>, je transforme vos idées en projet réel.</p><p>Besoin d'un site innovant ou d'une application avec du caractère? Je suis prêt à relever le défi!</p>"
+            text: "<p>Je suis <strong>designer UI/UX</strong> et <strong>développeur web</strong>, je transforme vos idées en projet réel.</p><p>Mon objectif est de continuer à <strong>apprendre</strong>, <strong>créer</strong> et <strong>contribuer</strong> à des projets innovants ayant un réel impact.</p>"
         },
+
         about: {
             title: "À propos de moi",
-            text: "<p>Passionné par l'informatique depuis mon plus jeune âge, j'ai toujours été fasciné par la manière dont la technologie peut transformer des idées en réalité. Après avoir poursuivi mes études en <strong>Techniques de l'informatique</strong>, ma curiosité m'a conduit à explorer le monde du développement web, où j'ai trouvé ma voie.</p><p>J'ai travaillé 6 ans comme développeur web sur des projets variés en utilisant des technologies comme <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, <strong>PHP</strong>, <strong>Vue.js</strong>, <strong>Angular</strong>, <strong>WordPress</strong>, <strong>C#</strong> et plusieurs autres. Ces années m'ont permis de développer une expertise solide et de m'adapter aux besoins spécifiques de chaque projet et client.</p><p>En cours de route, j'ai découvert une passion pour le <strong>design UI/UX</strong> et l'art de créer des expériences utilisateur intuitives et esthétiques. Cette passion m'a conduit à maîtriser des outils comme <strong>Figma</strong>, et à approfondir mes compétences en obtenant le <strong>certificat de design UX par Google</strong>. Cette formation m'a permis d'élargir ma compréhension des besoins utilisateurs, tout en renforçant ma capacité à concevoir des interfaces harmonieuses et fonctionnelles.</p><p>Aujourd'hui, je souhaite combiner mes compétences en <strong>développement web</strong> et en <strong>design UI/UX</strong> pour concevoir des solutions web innovantes. Mon objectif est de continuer à apprendre, créer et contribuer à des projets qui font une différence.</p>"
+            text: "<p>Avec 6 ans d'expérience en <strong>développement web</strong> sur des projets variés, j'ai progressivement développé une passion pour le <strong>design UI/UX</strong>, m'incitant à approfondir mes connaissances dans ce domaine.</p>",
+            action: "Voir mon parcours",
+
+            education: "ÉDUCATION",
+            experience: "EXPÉRIENCE",
+            skills: "COMPÉTENCES",
+            
+            design: "Design",
+            tools: "Outils",
+            coding: "Programmation",
+            languages: "Langues"
         },
-        footer: {
-            title: "Vous avez une idée en tête?",
-            text: "<p>Transformons-la ensemble en <strong>réalité</strong>!</p><p>Chaque détail compte pour donner vie à une idée qui marque les esprits.</p>"
+
+        journey: {
+
+            googleUX: {
+                title: "Google UX Design Certificate",
+                location: "Coursera - En ligne",
+                date: "Oct. 2024 - Nov. 2024",
+                text: "En suivant ce certificat, j'ai développé une expertise pour concevoir des wireframes et des prototypes, en utilisant des outils de conception tels que Figma et en menant des  recherches approfondies sur les besoins des utilisateurs."
+            },
+            cba: {
+                title: "Technique de l'informatique",
+                location: "Cégep Beauce-Appalache",
+                date: "Août 2017 - Juin 2020",
+                text: "Au cours de ce programme, j'ai développé des compétences approfondies en développement web et en programmation (native, mobile, jeux). J'ai travaillé sur des projets réels en équipe et faite des stages en milieu de travail."
+            },
+            webDev: {
+                title: "Développeur Web",
+                location: "IC Zones - Temps plein",
+                date: "Juin 2020 - Nov. 2024",
+                text: "En tant que développeur Full Stack passionné par l'interface utilisateur, j'ai réalisé et participé à la conception et au développement de plusieurs projets Web (sites, intranets, extranets) en collaborant directement avec les clients. Au cours des dernières années, j'ai constamment enrichi mes compétences en développement front-end, me permettant d'améliorer mon expertise en design d'interfaces. J'ai, depuis, réalisé des maquettes sur plusieurs projets à l'aide de Figma."
+            },
+            webDevStage: {
+                title: "Stages - Développeur Web",
+                location: "IC Zones - Temps partiel",
+                date: "Juin 2018 - Juin 2020",
+                text: "Au cours de mes stages, j'ai participé au développement de plusieurs sites web à l'aide de WordPress. J'ai aussi participé au développement applications web diverses."
+            }
         },
+
         project: {
             saveUp: {
                 title: "SaveUp",
@@ -47,7 +89,6 @@ const $allTranslations = {
 
             year: "Année(s)",
             usedTech: "Technologies utilisées",
-            links: "Lien(s)",
 
             view: "Voir le projet",
             viewPrototype: "Voir le prototype",
@@ -55,8 +96,9 @@ const $allTranslations = {
             workTogether: {
                 title: "Travaillons ensemble!",
                 text: "Vous aimez mon travail et vous souhaitez quelque chose de similaire?"
-            },
+            }
         },
+
         tag: {
             app: "Application",
             website: "Site web",
@@ -65,11 +107,124 @@ const $allTranslations = {
             dev: "Développement",
             web: "Développement web"
         },
-        tech: {
-            figma: "Figma",
-            vuejs: "Vue.js",
-            php: "PHP",
-            wp: "Wordpress"
+
+        footer: {
+            title: "Vous avez une idée en tête?",
+            text: "<p>Transformons-la ensemble en <strong>réalité</strong>!</p><p>Chaque <strong>détail</strong> compte pour donner vie à une idée qui marque les esprits.</p>"
+        },
+    },
+
+    en: {
+        title: "PGL - UI/UX Designer, Web Developer",
+        description: "Welcome, I'm Pier-Gabriel. I'm a UI/UX designer and a web developer, turning your ideas into real projects.",
+    
+        localeSwitch: "Français",
+        language: {
+            fr: "French",
+            en: "English"
+        },
+        menu: {
+            home: "Home",
+            about: "About",
+            projects: "Projects",
+            contact: "Contact"
+        },
+    
+        action: {
+            contactMe: "Contact Me"
+        },
+    
+        intro: {
+            title: "Welcome, I'm Pier-Gabriel",
+            text: "<p>I'm a <strong>UI/UX designer</strong> and a <strong>web developer</strong>, turning your ideas into real projects.</p><p>My goal is to continue <strong>learning</strong>, <strong>creating</strong>, and <strong>contributing</strong> to innovative projects that make a real impact.</p>"
+        },
+    
+        about: {
+            title: "About Me",
+            text: "<p>With 6 years of experience in <strong>web development</strong> across diverse projects, I have developed a growing passion for <strong>UI/UX design</strong>, driving me to deepen my expertise in this field.</p>",
+            action: "View my journey",
+    
+            education: "EDUCATION",
+            experience: "EXPERIENCE",
+            skills: "SKILLS",
+    
+            design: "Design",
+            tools: "Tools",
+            coding: "Coding",
+            languages: "Languages"
+        },
+    
+        journey: {
+            googleUX: {
+                title: "Google UX Design Certificate",
+                location: "Coursera - Online",
+                date: "Oct. 2024 - Nov. 2024",
+                text: "By completing this certificate, I developed expertise in creating wireframes and prototypes, using design tools like Figma, and conducting in-depth research into user needs."
+            },
+            cba: {
+                title: "Computer Science Technology",
+                location: "Cégep Beauce-Appalache",
+                date: "Aug. 2017 - June 2020",
+                text: "During this program, I acquired strong skills in web development and programming (native, mobile, games). I worked on real projects in teams and completed internships in professional environments."
+            },
+            webDev: {
+                title: "Web Developer",
+                location: "IC Zones - Full Time",
+                date: "June 2020 - Nov. 2024",
+                text: "As a Full Stack Developer passionate about user interfaces, I contributed to designing and developing several web projects (websites, intranets, extranets) while working closely with clients. Over the years, I honed my front-end development skills, enhancing my expertise in interface design. I also created mockups for multiple projects using Figma."
+            },
+            webDevStage: {
+                title: "Internships - Web Developer",
+                location: "IC Zones - Part Time",
+                date: "June 2018 - June 2020",
+                text: "During my internships, I contributed to the development of various websites using WordPress and worked on diverse web applications."
+            }
+        },
+    
+        project: {
+            saveUp: {
+                title: "SaveUp",
+                subtitle: "Budget Management Mobile App",
+                about: "<p><strong>SaveUp</strong> is a mobile app designed to simplify managing shared budgets and encourage group savings. Whether planning a dream vacation, buying a group gift, or sharing daily household expenses, <strong>SaveUp</strong> enables families and friends to collaborate efficiently and track their finances in real-time.</p>",
+                work: "<p><strong>SaveUp</strong> was a project created as part of my certification program, where I worked on designing several pages of the application. This project allowed me to enhance my <strong>UI/UX design</strong> skills and become more familiar with <strong>Figma</strong>, focusing on creating visually impactful and user-centric concepts.</p>"
+            },
+            traceApp: {
+                title: "Trace Application",
+                subtitle: "Tracking Management App",
+                about: "<p><strong>Trace</strong> is the go-to tool for quickly reporting and managing any situations requiring follow-up. <strong>Trace</strong> centralizes all follow-ups in one place to prevent any being missed. It can easily be used by all your field employees (even those with only a cellphone) to report situations needing attention.</p>",
+                work: "<p><strong>Trace</strong> is a web application I worked on for two years as a web developer. My role included both <strong>back-end</strong> and <strong>front-end</strong> tasks, and it was through this project that I discovered my interest in <strong>front-end</strong> development and, even more so, in <strong>UI/UX design</strong>.</p><p>During the project, I undertook a <strong>major redesign</strong> of the application to make it more functional on <strong>mobile</strong> and improve its usability. Several sections were redesigned to provide more intuitive navigation tailored to user needs.</p><p>This project allowed me to deepen my <strong>web development</strong> skills while specializing further in creating modern and optimized user interfaces.</p>"
+            },
+            traceWebsite: {
+                title: "Trace Website",
+                subtitle: "For a Tracking Management App",
+                about: "<p><strong>Trace</strong> is the go-to tool for quickly reporting and managing any situations requiring follow-up. <strong>Trace</strong> centralizes all follow-ups in one place to prevent any being missed. It can easily be used by all your field employees (even those with only a cellphone) to report situations needing attention.</p>",
+                work: "<p>As part of the <strong>Trace</strong> project, I also designed and developed the <strong>website</strong> to present the application. My role involved creating an attractive and informative showcase site, highlighting the key features and benefits of <strong>Trace</strong> clearly and engagingly.</p><p>I handled the visual design and development using <strong>WordPress</strong>, ensuring the design elements aligned with the application's identity. The goal was to effectively convey Trace's added value while providing a seamless user experience on both desktop and mobile.</p><p>This project enabled me to strengthen my skills in <strong>website creation</strong> and further explore the marketing aspects of <strong>UI/UX design</strong>.</p>"
+            },
+    
+            year: "Year(s)",
+            usedTech: "Used Technologies",
+    
+            view: "View the project",
+            viewPrototype: "View the prototype",
+    
+            workTogether: {
+                title: "Let's work together!",
+                text: "Do you like my work and want something similar?"
+            }
+        },
+    
+        tag: {
+            app: "Application",
+            website: "Website",
+            mobile: "Mobile",
+            designUIX: "UI/UX Design",
+            dev: "Development",
+            web: "Web Development"
+        },
+    
+        footer: {
+            title: "Have an idea in mind?",
+            text: "<p>Let's transform it into <strong>reality</strong> together!</p><p>Every <strong>detail</strong> matters to bring an idea to life that leaves a lasting impression.</p>"
         }
     }
 };
@@ -108,4 +263,6 @@ const $trans = (_id, _params = {}) => {
     return '';
 }
 
-document.title = $trans("docTitle");
+document.documentElement.lang = $locale;
+document.title = $trans("title");
+document.querySelector("meta[name='description']").setAttribute("content", $trans("description"));
