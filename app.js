@@ -89,8 +89,8 @@ PetiteVue.createApp({
                 {src: `mockup-fr.jpg`, alt: "Mockup"},
                 {src: "logo.jpg", alt: "Logo"}
             ],
-            link: "https://www.figma.com/proto/F8Ua3ObJj2iX7tHXL1Ilht/SaveUp?page-id=0%3A1&node-id=115-52&node-type=canvas&viewport=21%2C223%2C0.24&t=jhXtdvaFzGm8n9fY-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=72%3A27",
-            prototypeLink: "https://www.figma.com/design/F8Ua3ObJj2iX7tHXL1Ilht/SaveUp?node-id=0-1&t=VoENwTURbLognBNR-1"
+            link: "https://www.figma.com/proto/VZUOdx8wfN1NdFOGYB6SJK/SaveUp?page-id=0%3A1&node-id=115-52&node-type=canvas&viewport=278%2C234%2C0.15&t=07PSacTTExDQeQNO-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=72%3A27",
+            prototypeLink: "https://www.figma.com/design/VZUOdx8wfN1NdFOGYB6SJK/SaveUp"
         },
         {
             key: "traceApp",
