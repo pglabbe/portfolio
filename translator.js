@@ -29,6 +29,7 @@ const $allTranslations = {
             text: "<p>Avec 6 ans d'expérience en <strong>développement web</strong> sur des projets variés, j'ai progressivement développé une passion pour le <strong>design UI/UX</strong>, m'incitant à approfondir mes connaissances dans ce domaine.</p>",
             action: "Voir mon parcours",
 
+            modalTitle: "Mon parcours",
             education: "ÉDUCATION",
             experience: "EXPÉRIENCE",
             skills: "COMPÉTENCES",
@@ -143,7 +144,8 @@ const $allTranslations = {
             title: "About Me",
             text: "<p>With 6 years of experience in <strong>web development</strong> across diverse projects, I have developed a growing passion for <strong>UI/UX design</strong>, driving me to deepen my expertise in this field.</p>",
             action: "View my journey",
-    
+
+            modalTitle: "My journey",
             education: "EDUCATION",
             experience: "EXPERIENCE",
             skills: "SKILLS",
