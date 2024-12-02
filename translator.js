@@ -41,7 +41,6 @@ const $allTranslations = {
         },
 
         journey: {
-
             googleUX: {
                 title: "Google UX Design Certificate",
                 location: "Coursera - En ligne",
@@ -63,7 +62,7 @@ const $allTranslations = {
             webDevStage: {
                 title: "Stages - Développeur Web",
                 location: "IC Zones - Temps partiel",
-                date: "Juin 2018 - Juin 2020",
+                date: "Mai 2018 - Juin 2020",
                 text: "Au cours de mes stages, j'ai participé au développement de plusieurs sites web à l'aide de WordPress. J'ai aussi participé au développement applications web diverses."
             }
         },
@@ -74,6 +73,12 @@ const $allTranslations = {
                 subtitle: "Application mobile de gestion de budgets",
                 about: "<p><strong>SaveUp</strong> est une application mobile conçue pour simplifier la gestion de budgets communs et encourager les économies en groupe. Que ce soit pour planifier des vacances de rêve, acheter un cadeau commun, ou partager les dépenses quotidiennes d'un foyer, <strong>SaveUp</strong> permet aux familles et amis de collaborer efficacement et de suivre leurs finances en temps réel.</p>",
                 work: "<p><strong>SaveUp</strong> est un projet initié dans le cadre de mon certificat, où j'ai travaillé sur la conception de certaines pages de l'application. Ce projet m'a permis d'approfondir mes compétences en <strong>design UI/UX</strong> et de me familiariser davantage avec <strong>Figma</strong>, tout en travaillant sur un concept visuellement impactant et orienté vers les besoins des utilisateurs.</p>"
+            },
+            saveUpWebsite: {
+                title: "Site Web de SaveUp",
+                subtitle: "Pour une application mobile de gestion de budgets",
+                about: "<p><strong>SaveUp</strong> est une application mobile conçue pour simplifier la gestion de budgets communs et encourager les économies en groupe. Que ce soit pour planifier des vacances de rêve, acheter un cadeau commun, ou partager les dépenses quotidiennes d'un foyer, <strong>SaveUp</strong> permet aux familles et amis de collaborer efficacement et de suivre leurs finances en temps réel.</p>",
+                work: "<p>Le site Web de <strong>SaveUp</strong> est la suite du projet initié dans le cadre de mon certificat, où j'ai réalisé un site Web démonstratif pour l'application mobile. Ce projet m'a permis d'approfondir mes compétences en <strong>design UI/UX</strong> et de me familiariser davantage avec <strong>Figma</strong>, tout en travaillant sur un concept visuellement impactant et orienté vers les besoins des utilisateurs.</p>"
             },
             traceApp: {
                 title: "Application Trace",
@@ -132,7 +137,7 @@ const $allTranslations = {
         },
     
         action: {
-            contactMe: "Contact Me"
+            contactMe: "Contact me"
         },
     
         intro: {
@@ -141,7 +146,7 @@ const $allTranslations = {
         },
     
         about: {
-            title: "About Me",
+            title: "About me",
             text: "<p>With 6 years of experience in <strong>web development</strong> across diverse projects, I have developed a growing passion for <strong>UI/UX design</strong>, driving me to deepen my expertise in this field.</p>",
             action: "View my journey",
 
@@ -178,7 +183,7 @@ const $allTranslations = {
             webDevStage: {
                 title: "Internships - Web Developer",
                 location: "IC Zones - Part Time",
-                date: "June 2018 - June 2020",
+                date: "May 2018 - June 2020",
                 text: "During my internships, I contributed to the development of various websites using WordPress and worked on diverse web applications."
             }
         },
@@ -189,6 +194,12 @@ const $allTranslations = {
                 subtitle: "Budget Management Mobile App",
                 about: "<p><strong>SaveUp</strong> is a mobile app designed to simplify managing shared budgets and encourage group savings. Whether planning a dream vacation, buying a group gift, or sharing daily household expenses, <strong>SaveUp</strong> enables families and friends to collaborate efficiently and track their finances in real-time.</p>",
                 work: "<p><strong>SaveUp</strong> was a project created as part of my certification program, where I worked on designing several pages of the application. This project allowed me to enhance my <strong>UI/UX design</strong> skills and become more familiar with <strong>Figma</strong>, focusing on creating visually impactful and user-centric concepts.</p>"
+            },
+            saveUpWebsite: {
+                title: "SaveUp Website",
+                subtitle: "For a Budget Management Mobile App",
+                about: "<p><strong>SaveUp</strong> is a mobile app designed to simplify managing shared budgets and encourage group savings. Whether planning a dream vacation, buying a group gift, or sharing daily household expenses, <strong>SaveUp</strong> enables families and friends to collaborate efficiently and track their finances in real-time.</p>",
+                work: "<p>The <strong>SaveUp</strong> website is the continuation of a project initiated as part of my certification, where I created a demonstrative website for the mobile application. This project allowed me to deepen my <strong>UI/UX design</strong> skills and become more familiar with <strong>Figma</strong>, while working on a visually impactful concept tailored to users' needs.</p>"
             },
             traceApp: {
                 title: "Trace Application",

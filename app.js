@@ -89,8 +89,20 @@ PetiteVue.createApp({
                 {src: `mockup-fr.jpg`, alt: "Mockup"},
                 {src: "logo.jpg", alt: "Logo"}
             ],
-            link: "https://www.figma.com/proto/VZUOdx8wfN1NdFOGYB6SJK/SaveUp?page-id=0%3A1&node-id=115-52&node-type=canvas&viewport=278%2C234%2C0.15&t=07PSacTTExDQeQNO-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=72%3A27",
+            link: "https://www.figma.com/proto/VZUOdx8wfN1NdFOGYB6SJK/SaveUp",
             prototypeLink: "https://www.figma.com/design/VZUOdx8wfN1NdFOGYB6SJK/SaveUp"
+        },
+        {
+           key: "saveUpWebsite",
+           color: "#333333",
+           year: "2024",
+           tags: ["website", "mobile", "designUIX"],
+           techs: ["Figma"],
+           images: [
+               {src: `mockup-fr.jpg`, alt: "Mockup"}
+           ],
+           link: "https://www.figma.com/proto/R8usq9CPmiUgy1QaaqLKRU/SaveUp-Website",
+           prototypeLink: "https://www.figma.com/design/R8usq9CPmiUgy1QaaqLKRU/SaveUp-Website"
         },
         {
             key: "traceApp",
