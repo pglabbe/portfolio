@@ -127,7 +127,7 @@ PetiteVue.createApp({
             images: [
                 {src: `website-${$locale}.jpg`, alt: "Website"}
             ],
-            link: "https://trace.iczones.com"
+            link: "https://traceapp.ca"
         },
     ],
 
