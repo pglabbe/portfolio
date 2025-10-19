@@ -1,15 +1,31 @@
-const screen = PetiteVue.reactive({
-  width: window.innerWidth,
-  mobile: window.innerWidth <= 900
-});
-
-window.addEventListener("resize", () => {
-  screen.width = window.innerWidth;
-  screen.mobile = window.innerWidth <= 900;
-});
-
 PetiteVue.createApp({
-  $screen: screen,
+  $screen: { width: null, mobile: false },
+  $theme: "light",
+
+  mounted() {
+    this.onResize();
+    window.addEventListener("resize", () => this.onResize());
+
+    // this.setTheme();
+  },
+
+  onResize() {
+    this.$screen.width = window.innerWidth;
+    this.$screen.mobile = window.innerWidth <= 900;
+  },
+
+  setTheme() {
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme !== null && ["light", "dark"].includes(savedTheme)) {
+      this.$theme = savedTheme;
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      this.$theme = "dark";
+    }
+
+    document.documentElement.dataset.theme = this.$theme;
+    localStorage.setItem("theme", this.$theme);
+  },
 
   allowScroll() {
     document.querySelector("body").classList.remove("no-scroll");
