@@ -104,7 +104,7 @@ header {
   backdrop-filter: blur(8px);
 }
 
-header > div > a {
+header > .logo > a {
   display: flex;
   align-items: center;
   gap: 14px;
@@ -112,7 +112,7 @@ header > div > a {
   text-decoration: none;
 }
 
-header > div > a > span {
+header > .logo > a > span {
   font-weight: 600;
   color: rgb(var(--text-color));
 }
@@ -129,7 +129,7 @@ header > nav {
   gap: 30px;
 }
 
-header > nav > a {
+header > nav a {
   display: flex;
   align-items: center;
   color: rgb(var(--text-color));
@@ -140,8 +140,8 @@ header > nav > a {
   transition: 0.2s;
 }
 
-header > nav > a:hover,
-header > nav > a.active {
+header > nav a:hover,
+header > nav a.active {
   opacity: 1;
 }
 

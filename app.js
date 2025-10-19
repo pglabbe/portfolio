@@ -8,10 +8,6 @@ window.addEventListener("resize", () => {
   screen.mobile = window.innerWidth <= 900;
 });
 
-const lenis = new Lenis({ autoRaf: true, anchors: true });
-const lenis_about_modal = new Lenis({ wrapper: document.getElementById("about-modal"), content: document.querySelector(".modal-content"), autoRaf: true });
-const lenis_project_modal = new Lenis({ wrapper: document.getElementById("project-modal"), content: document.querySelector(".modal-content"), autoRaf: true });
-
 PetiteVue.createApp({
   $screen: screen,
 
@@ -139,13 +135,5 @@ PetiteVue.createApp({
   closeProject() {
     this.projectOpened = false;
     this.allowScroll();
-  },
-
-  getProjectAnimationDelay(index) {
-    if (screen.mobile || index >= 2) {
-      return index % 2 === 0 ? 0 : 100;
-    }
-
-    return index === 1 ? 500 : 400;
   }
 }).mount();

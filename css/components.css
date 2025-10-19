@@ -117,11 +117,12 @@
   display: flex;
   cursor: pointer;
   opacity: 0.5;
-  transition: 0.2s;
+  transition: 0.4s cubic-bezier(0, 1, 0.5, 1);
 }
 
 .modal .modal-close:hover {
   opacity: 1;
+  transform: rotate(90deg);
 }
 
 .modal > .modal-content {

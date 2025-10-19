@@ -27,15 +27,22 @@
   <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.11/dist/lenis.css">
   <script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"></script>
 
-  <!-- Translator -->
+  <!-- GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+
+  <!-- Scripts -->
   <script src="scripts/translator.js"></script>
+  <script src="scripts/lenis.js"></script>
+  <script src="scripts/animations.js"></script>
 </head>
 
 <body>
   <div class="app">
     <!-- Header -->
     <header>
-      <div>
+      <div class="logo">
         <a href="">
           <img src="images/logo.png" alt="PGL">
           <span>Pier-Gabriel Labbé</span>
@@ -44,9 +51,11 @@
 
       <nav v-if="!$screen.mobile">
         <template v-for="(item, index) in menuItems">
-          <a :href="item.link" :class="index === 0 ? 'active' : ''">
-            {{ $trans(item.key) }}
-          </a>
+          <div>
+            <a :href="item.link" :class="index === 0 ? 'active' : ''">
+              {{ $trans(item.key) }}
+            </a>
+          </div>
         </template>
       </nav>
 
@@ -76,7 +85,7 @@
     </div>
 
     <!-- Intro -->
-    <div class="section" data-aos="fade" data-aos-delay="200">
+    <div class="section">
       <svg class="shapes" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250">
         <circle cx="580" cy="50" r="60"></circle>
         <circle cx="350" cy="230" r="90"></circle>
@@ -104,11 +113,10 @@
 
     <!-- About -->
     <div id="about" class="ref"></div>
-    <div class="section d-flex flex-wrap flex-row justify-between align-center gap-24" data-aos="fade"
-      data-aos-delay="300">
-      <svg class="shapes" style="opacity: 0.4" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 250">
-        <circle cx="600" cy="230" r="120"></circle>
-        <circle cx="100" cy="0" r="90"></circle>
+    <div class="section d-flex flex-wrap flex-row justify-between align-center gap-24">
+      <svg class="shapes" style="opacity: 0.4" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 250">
+        <circle cx="700" cy="230" r="120"></circle>
+        <circle cx="200" cy="0" r="90"></circle>
       </svg>
 
       <div style="flex: 1 1 500px">
@@ -127,8 +135,7 @@
     <div id="projects" class="ref"></div>
     <div class="row projects">
       <template v-for="(project, index) in projects" :key="index">
-        <div class="project" :style="{color: project.color}" @click="openProject(project)" data-aos="fade"
-          :data-aos-delay="getProjectAnimationDelay(index)">
+        <div class="project" :style="{color: project.color}" @click="openProject(project)">
           <div class="background" :style="{background: project.color}"></div>
 
           <div class="infos">
@@ -154,7 +161,7 @@
 
     <!-- Contact -->
     <div id="contact" class="ref"></div>
-    <div class="section" data-aos="fade" data-aos-delay="200">
+    <div class="section">
       <svg class="shapes" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250">
         <circle cx="580" cy="50" r="60"></circle>
         <circle cx="350" cy="230" r="90"></circle>
