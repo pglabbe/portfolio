@@ -1,7 +1,7 @@
 const $allTranslations = {
   fr: {
-    title: "PGL - Designer UI/UX, Développeur Web",
-    description: "Bienvenue, moi c'est Pier-Gabriel, je suis designer UI/UX et développeur web, je transforme vos idées en projet réel.",
+    title: "PGL - Développeur Web",
+    description: "Bienvenue, moi c'est Pier-Gabriel. Je suis développeur web, curieux et passionné par le design d'interface.",
 
     localeSwitch: "English",
     language: {
