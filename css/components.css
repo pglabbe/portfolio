@@ -88,7 +88,7 @@
 .modal.opened {
   opacity: 1;
   transform: translateY(0);
-  transition: 0.4s cubic-bezier(0, 1, 0.5, 1);
+  transition: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .modal-backdrop {
@@ -117,7 +117,7 @@
   display: flex;
   cursor: pointer;
   opacity: 0.5;
-  transition: 0.4s cubic-bezier(0, 1, 0.5, 1);
+  transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .modal .modal-close:hover {
