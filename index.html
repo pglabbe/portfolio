@@ -1,381 +1,400 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PGL - Designer UI/UX, Développeur Web</title>
+  <meta name="description"
+    content="Bienvenue, moi c'est Pier-Gabriel, je suis designer UI/UX et développeur web, je transforme vos idées en projet réel.">
+  <link rel="icon" type="image/png" href="images/logo.png">
 
-    <title>PGL - Designer UI/UX, Développeur Web</title>
-    <meta name="description" content="Bienvenue, moi c'est Pier-Gabriel, je suis designer UI/UX et développeur web, je transforme vos idées en projet réel.">
-    <link rel="icon" type="image/png" href="images/logo.png">
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/utilities.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/style.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/style.css">
 
-    <!-- AOS -->
-    <link href="plugins/aos.css" rel="stylesheet">
-    <script src="plugins/aos.js"></script>
+  <!-- PetiteVue -->
+  <script src="https://unpkg.com/petite-vue"></script>
 
-    <!-- PetiteVue -->
-    <script src="plugins/petite-vue.js"></script>
-    
-    <!-- Translator -->
-    <script src="translator.js"></script>
+  <!-- Lenis -->
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.11/dist/lenis.css">
+  <script src="https://unpkg.com/lenis@1.3.11/dist/lenis.min.js"></script>
+
+  <!-- Translator -->
+  <script src="scripts/translator.js"></script>
 </head>
+
 <body>
-    <div class="app">
-        <!-- Header -->
-        <header>
-            <div>
-                <a href="">
-                    <img src="images/logo.png" alt="PGL">
-                    <span>Pier-Gabriel Labbé</span>
-                </a>
-            </div>
-    
-            <nav v-if="!$screen.mobile">
-                <template v-for="(item, index) in menuItems">
-                    <a :href="item.link" :class="index === 0 ? 'active' : ''">
-                        {{ $trans(item.key) }}
-                    </a>
-                </template>
+  <div class="app">
+    <!-- Header -->
+    <header>
+      <div>
+        <a href="">
+          <img src="images/logo.png" alt="PGL">
+          <span>Pier-Gabriel Labbé</span>
+        </a>
+      </div>
 
-                <a href="" @click="switchLocale()">{{ $trans("localeSwitch") }}</a>
-            </nav>
-    
-            <nav v-else>
-                <a @click="toggleMenu()">
-                    <svg v-if="!menu" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" viewBox="0 -960 960 960">
-                        <path d="M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z"/>
-                    </svg>
-                    <svg v-else xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" viewBox="0 -960 960 960">
-                        <path d="M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z"/>
-                    </svg>
-                </a>
-            </nav>
-        </header>
-    
-        <!-- Sidebar -->
-        <div v-if="$screen.mobile" class="sidebar" :class="menu ? 'opened' : ''">
-            <nav>
-                <template v-for="(item, index) in menuItems">
-                    <a :href="item.link" @click="closeMenu()">{{ $trans(item.key) }}</a>
-                </template>
+      <nav v-if="!$screen.mobile">
+        <template v-for="(item, index) in menuItems">
+          <a :href="item.link" :class="index === 0 ? 'active' : ''">
+            {{ $trans(item.key) }}
+          </a>
+        </template>
+      </nav>
 
-                <a href="" @click="switchLocale()">{{ $trans("localeSwitch") }}</a>
-            </nav>
-        </div>
-    
-        <!-- Intro -->
-        <div class="section" data-aos="fade" data-aos-delay="200">
-            <svg class="shapes" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250">
-                <circle cx="580" cy="50" r="60"></circle>
-                <circle cx="350" cy="230" r="90"></circle>
-                <circle cx="200" cy="10" r="65"></circle>
-            </svg>
-                
-            <h1 v-html="$trans('intro.title')"></h1>
-            <div class="text" v-html="$trans('intro.text')"></div>
+      <nav v-else>
+        <a @click="toggleMenu()">
+          <svg v-if="!menu" xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" viewBox="0 -960 960 960">
+            <path
+              d="M160-240q-17 0-28.5-11.5T120-280q0-17 11.5-28.5T160-320h640q17 0 28.5 11.5T840-280q0 17-11.5 28.5T800-240H160Zm0-200q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h640q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440H160Zm0-200q-17 0-28.5-11.5T120-680q0-17 11.5-28.5T160-720h640q17 0 28.5 11.5T840-680q0 17-11.5 28.5T800-640H160Z" />
+          </svg>
+          <svg v-else xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" viewBox="0 -960 960 960">
+            <path
+              d="M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z" />
+          </svg>
+        </a>
+      </nav>
+    </header>
 
-            <div class="actions">
-                <a :href="contactLink" class="btn">
-                    <span>{{ $trans("action.contactMe") }}</span>
-                </a>
+    <!-- Sidebar -->
+    <div v-if="$screen.mobile" class="sidebar" :class="menu ? 'opened' : ''">
+      <nav>
+        <template v-for="(item, index) in menuItems">
+          <a :href="item.link" @click="closeMenu()">{{ $trans(item.key) }}</a>
+        </template>
 
-                <a href="https://www.linkedin.com/in/pier-gabriel-labb%C3%A9-774a43332/" target="_blank" class="btn icon primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 76.624 65.326">
-                        <path data-name="Path 2520" d="M958.98,112.559h-9.6V97.525c0-3.585-.064-8.2-4.993-8.2-5,0-5.765,3.906-5.765,7.939v15.294h-9.6V81.642h9.216v4.225h.129a10.1,10.1,0,0,1,9.093-4.994c9.73,0,11.524,6.4,11.524,14.726ZM918.19,77.416a5.571,5.571,0,1,1,5.57-5.572,5.571,5.571,0,0,1-5.57,5.572m4.8,35.143h-9.61V81.642h9.61Zm40.776-55.2h-55.21a4.728,4.728,0,0,0-4.781,4.67v55.439a4.731,4.731,0,0,0,4.781,4.675h55.21a4.741,4.741,0,0,0,4.8-4.675V62.025a4.738,4.738,0,0,0-4.8-4.67" transform="translate(-897.776 -57.355)"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-
-        <!-- About -->
-        <div id="about" class="ref"></div>
-        <div class="section d-flex flex-wrap flex-row justify-between align-center gap-24" data-aos="fade" data-aos-delay="300">
-            <svg class="shapes" style="opacity: 0.4" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 250">
-                <circle cx="600" cy="230" r="120"></circle>
-                <circle cx="100" cy="0" r="90"></circle>
-            </svg>
-
-            <div style="flex: 1 1 500px">
-                <h3 v-html="$trans('about.title')" class="mb-8"></h3>
-                <div class="text" style="max-width: 800px" v-html="$trans('about.text')"></div>
-            </div>
-
-            <div>
-                <div class="btn" @click="openAbout()">
-                    <span>{{ $trans("about.action") }}</span>
-                </div>
-            </div>
-        </div>
-    
-        <!-- Projects -->
-        <div id="projects" class="ref"></div>
-        <div class="row projects">
-            <template v-for="(project, index) in projects" :key="index">
-                <div class="project" :style="{color: project.color}"
-                     @click="openProject(project)"
-                     data-aos="fade" :data-aos-delay="getProjectAnimationDelay(index)">
-                    <div class="background" :style="{background: project.color}"></div>
-
-                    <div class="infos">
-                        <div>
-                            <p class="text-18 line-height-1 weight-semibold mb-4">{{ $trans(`project.${project.key}.title`) }}</p>
-                            <p class="text-15 opacity-70">{{ $trans(`project.${project.key}.subtitle`) }}</p>
-                        </div>  
-
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -960 960 960" :fill="project.color">
-                            <path d="M647-440H200q-17 0-28.5-11.5T160-480q0-17 11.5-28.5T200-520h447L451-716q-12-12-11.5-28t12.5-28q12-11 28-11.5t28 11.5l264 264q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L508-188q-11 11-27.5 11T452-188q-12-12-12-28.5t12-28.5l195-195Z"/>
-                        </svg>
-                    </div>
-
-                    <div class="content" :class="{'mobile': project.mobile}" :style="{backgroundImage: `url(images/${project.key}/thumbnail-${$locale}.png)`}"></div>
-                </a>
-            </template>
-
-            <div v-if="projects.length % 2 === 1" class="separator"></div>
-        </div>
-    
-        <!-- Contact -->
-        <div id="contact" class="ref"></div>
-        <div class="section" data-aos="fade" data-aos-delay="200">
-            <svg class="shapes" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250">
-                <circle cx="580" cy="50" r="60"></circle>
-                <circle cx="350" cy="230" r="90"></circle>
-                <circle cx="200" cy="10" r="65"></circle>
-            </svg>
-
-            <h2 v-html="$trans('footer.title')"></h2>
-            <div class="text" v-html="$trans('footer.text')"></div>
-
-            <div class="actions">
-                <a :href="contactLink" class="btn">
-                    <span>{{ $trans("action.contactMe") }}</span>
-                </a>
-
-                <a href="https://www.linkedin.com/in/pier-gabriel-labb%C3%A9-774a43332/" target="_blank" class="btn icon primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 76.624 65.326">
-                        <path data-name="Path 2520" d="M958.98,112.559h-9.6V97.525c0-3.585-.064-8.2-4.993-8.2-5,0-5.765,3.906-5.765,7.939v15.294h-9.6V81.642h9.216v4.225h.129a10.1,10.1,0,0,1,9.093-4.994c9.73,0,11.524,6.4,11.524,14.726ZM918.19,77.416a5.571,5.571,0,1,1,5.57-5.572,5.571,5.571,0,0,1-5.57,5.572m4.8,35.143h-9.61V81.642h9.61Zm40.776-55.2h-55.21a4.728,4.728,0,0,0-4.781,4.67v55.439a4.731,4.731,0,0,0,4.781,4.675h55.21a4.741,4.741,0,0,0,4.8-4.675V62.025a4.738,4.738,0,0,0-4.8-4.67" transform="translate(-897.776 -57.355)"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-        
-        <div class="modal-backdrop" :class="{'opened': aboutOpened || projectOpened}"></div>
-
-        <!-- About Modal -->
-        <div id="about-modal" class="modal" :class="{'opened': aboutOpened}">
-            <div class="modal-header" @click="closeAbout()"></div>
-
-            <div class="modal-content">
-                <div class="sticky d-flex justify-between align-center gap-12">
-                    <div>
-                        <h2>{{ $trans("about.modalTitle") }}</h2>
-                    </div>
-
-                    <div class="modal-close" @click="closeAbout()">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" viewBox="0 -960 960 960">
-                            <path d="M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z"/>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="about-section">
-                    <div>
-                        <p>{{ $trans("about.education") }}</p>
-                    </div>
-
-                    <div class="journey-list">
-                        <template v-for="journey in ['googleUX', 'cba']">
-                            <div class="journey">
-                                <p class="title">{{ $trans(`journey.${journey}.title`) }}</p>
-        
-                                <div class="subtitle">
-                                    <p class="location">{{ $trans(`journey.${journey}.location`) }}</p>
-                                    <p class="date">{{ $trans(`journey.${journey}.date`) }}</p>
-                                </div>
-        
-                                <p class="text">{{ $trans(`journey.${journey}.text`) }}</p>
-                            </div>
-                        </template>
-                    </div>
-                </div>
-
-                <div class="about-section">
-                    <div>
-                        <p>{{ $trans("about.experience") }}</p>
-                    </div>
-
-                    <div class="journey-list">
-                        <template v-for="journey in ['webDev', 'webDevStage']">
-                            <div class="journey">
-                                <p class="title">{{ $trans(`journey.${journey}.title`) }}</p>
-        
-                                <div class="subtitle">
-                                    <p class="location">{{ $trans(`journey.${journey}.location`) }}</p>
-                                    <p class="date">{{ $trans(`journey.${journey}.date`) }}</p>
-                                </div>
-        
-                                <p class="text">{{ $trans(`journey.${journey}.text`) }}</p>
-                            </div>
-                        </template>
-                    </div>
-                </div>
-
-                <div class="about-section">
-                    <div>
-                        <p>{{ $trans("about.skills") }}</p>
-                    </div>
-
-                    <div class="journey-list">
-                        <div class="journey">
-                            <p class="title">{{ $trans("about.design") }}</p>
-    
-                            <div class="tag-group mt-8">
-                                <div class="tag">UI, UX</div>
-                                <div class="tag">Wireframes</div>
-                                <div class="tag">Prototypes</div>
-                                <div class="tag">Responsive</div>
-                                <div class="tag">Mobile</div>
-                            </div>
-                        </div>
-
-                        <div class="journey">
-                            <p class="title">{{ $trans("about.tools") }}</p>
-    
-                            <div class="tag-group mt-8">
-                                <div class="tag">Figma</div>
-                                <div class="tag">Photoshop</div>
-                                <div class="tag">MS Office</div>
-                                <div class="tag">Google Workspace</div>
-                                <div class="tag">VS Code</div>
-                                <div class="tag">IntelliJ IDEA</div>
-                            </div>
-                        </div>
-
-                        <div class="journey">
-                            <p class="title">{{ $trans("about.coding") }}</p>
-    
-                            <div class="tag-group mt-8">
-                                <div class="tag">HTML</div>
-                                <div class="tag">CSS</div>
-                                <div class="tag">JavaScript</div>
-                                <div class="tag">Vue.js</div>
-                                <div class="tag">Angular</div>
-                                <div class="tag">Wordpress</div>
-                                <div class="tag">PHP</div>
-                                <div class="tag">Git</div>
-                                <div class="tag">GitHub</div>
-                                <div class="tag">Bitbucket</div>
-                                <div class="tag">PWA</div>
-                            </div>
-                        </div>
-                        
-                        <div class="journey">
-                            <p class="title">{{ $trans("about.languages") }}</p>
-    
-                            <div class="tag-group mt-8">
-                                <div class="tag">{{ $trans("language.fr") }}</div>
-                                <div class="tag">{{ $trans("language.en") }}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Project Modal -->
-        <div id="project-modal" class="modal" :class="{'opened': projectOpened}">
-            <div class="modal-header" @click="closeProject()"></div>
-
-            <div v-if="selectedProject" class="modal-content">
-                <div class="sticky d-flex justify-between align-center gap-12">
-                    <div>
-                        <h2>{{ $trans(`project.${selectedProject.key}.title`) }}</h2>
-                        <p class="opacity-50">{{ $trans(`project.${selectedProject.key}.subtitle`) }}</p>
-                    </div>
-
-                    <div class="modal-close" @click="closeProject()">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" viewBox="0 -960 960 960">
-                            <path d="M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z"/>
-                        </svg>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="tag-group">
-                        <template v-for="tag in selectedProject.tags ?? []">
-                            <div class="tag">{{ $trans(`tag.${tag}`) }}</div>
-                        </template>
-                    </div>
-                </div>
-
-                <div v-html="$trans(`project.${selectedProject.key}.about`)" class="d-flex flex-column gap-28"></div>
-
-                <div v-html="$trans(`project.${selectedProject.key}.work`)" class="d-flex flex-column gap-28"></div>
-                
-                <template v-for="image in selectedProject.images ?? []">
-                    <div>
-                        <img :src="`images/${selectedProject.key}/${image.src}`" :alt="image.alt ?? ''"
-                             @click="window.open(`images/${selectedProject.key}/${image.src}`, '_blank')" style="cursor: zoom-in;">
-                    </div>
-                </template>
-
-                <div>
-                    <div class="item-grid">
-                        <div>
-                            <p class="weight-bold mb-4">{{ $trans("project.usedTech") }}</p>
-                            <div class="tag-group">
-                                <template v-for="tech in selectedProject.techs ?? []">
-                                    <div class="tag grey">{{ tech }}</div>
-                                </template>
-                            </div>
-                        </div>
-
-                        <div>
-                            <p class="weight-bold mb-4">{{ $trans("project.year") }}</p>
-                            <div class="tag-group">
-                                <div class="tag grey">{{ selectedProject.year }}</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div v-if="selectedProject.link || selectedProject.prototypeLink">
-                    <div class="d-flex flex-wrap gap-12">
-                        <a v-if="selectedProject.link" :href="selectedProject.link" target="_blank" class="btn primary" :class="{'flex-grow-1': screen.mobile}">
-                            {{ $trans("project.view") }}
-                        </a>
-    
-                        <a v-if="selectedProject.prototypeLink" :href="selectedProject.prototypeLink" target="_blank" class="btn" :class="{'flex-grow-1': screen.mobile}">
-                            {{ $trans("project.viewPrototype") }}
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="section d-flex flex-wrap flex-row justify-between align-center">
-                        <div>
-                            <h2 class="mb-8">{{ $trans("project.workTogether.title") }}</h2>
-
-                            <div class="text">
-                                <p>{{ $trans("project.workTogether.text") }}</p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <a :href="contactLink" class="btn primary">
-                                <span>{{ $trans("action.contactMe") }}</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <a href="" @click="switchLocale()">{{ $trans("localeSwitch") }}</a>
+      </nav>
     </div>
 
-    <script src="app.js"></script>
+    <!-- Intro -->
+    <div class="section" data-aos="fade" data-aos-delay="200">
+      <svg class="shapes" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250">
+        <circle cx="580" cy="50" r="60"></circle>
+        <circle cx="350" cy="230" r="90"></circle>
+        <circle cx="200" cy="10" r="65"></circle>
+      </svg>
+
+      <h1 v-html="$trans('intro.title')"></h1>
+      <div class="text" v-html="$trans('intro.text')"></div>
+
+      <div class="actions">
+        <a :href="contactLink" class="btn">
+          <span>{{ $trans("action.contactMe") }}</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/pier-gabriel-labb%C3%A9-774a43332/" target="_blank"
+          class="btn icon primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 76.624 65.326">
+            <path data-name="Path 2520"
+              d="M958.98,112.559h-9.6V97.525c0-3.585-.064-8.2-4.993-8.2-5,0-5.765,3.906-5.765,7.939v15.294h-9.6V81.642h9.216v4.225h.129a10.1,10.1,0,0,1,9.093-4.994c9.73,0,11.524,6.4,11.524,14.726ZM918.19,77.416a5.571,5.571,0,1,1,5.57-5.572,5.571,5.571,0,0,1-5.57,5.572m4.8,35.143h-9.61V81.642h9.61Zm40.776-55.2h-55.21a4.728,4.728,0,0,0-4.781,4.67v55.439a4.731,4.731,0,0,0,4.781,4.675h55.21a4.741,4.741,0,0,0,4.8-4.675V62.025a4.738,4.738,0,0,0-4.8-4.67"
+              transform="translate(-897.776 -57.355)" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- About -->
+    <div id="about" class="ref"></div>
+    <div class="section d-flex flex-wrap flex-row justify-between align-center gap-24" data-aos="fade"
+      data-aos-delay="300">
+      <svg class="shapes" style="opacity: 0.4" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 250">
+        <circle cx="600" cy="230" r="120"></circle>
+        <circle cx="100" cy="0" r="90"></circle>
+      </svg>
+
+      <div style="flex: 1 1 500px">
+        <h3 v-html="$trans('about.title')" class="mb-8"></h3>
+        <div class="text" style="max-width: 800px" v-html="$trans('about.text')"></div>
+      </div>
+
+      <div>
+        <div class="btn" @click="openAbout()">
+          <span>{{ $trans("about.action") }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div id="projects" class="ref"></div>
+    <div class="row projects">
+      <template v-for="(project, index) in projects" :key="index">
+        <div class="project" :style="{color: project.color}" @click="openProject(project)" data-aos="fade"
+          :data-aos-delay="getProjectAnimationDelay(index)">
+          <div class="background" :style="{background: project.color}"></div>
+
+          <div class="infos">
+            <div>
+              <p class="text-18 line-height-1 weight-semibold mb-4">{{ $trans(`project.${project.key}.title`) }}</p>
+              <p class="text-15 opacity-70">{{ $trans(`project.${project.key}.subtitle`) }}</p>
+            </div>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -960 960 960"
+              :fill="project.color">
+              <path
+                d="M647-440H200q-17 0-28.5-11.5T160-480q0-17 11.5-28.5T200-520h447L451-716q-12-12-11.5-28t12.5-28q12-11 28-11.5t28 11.5l264 264q6 6 8.5 13t2.5 15q0 8-2.5 15t-8.5 13L508-188q-11 11-27.5 11T452-188q-12-12-12-28.5t12-28.5l195-195Z" />
+            </svg>
+          </div>
+
+          <div class="content" :class="{'mobile': project.mobile}"
+            :style="{backgroundImage: `url(images/${project.key}/thumbnail-${$locale}.png)`}"></div>
+          </a>
+      </template>
+
+      <div v-if="projects.length % 2 === 1" class="separator"></div>
+    </div>
+
+    <!-- Contact -->
+    <div id="contact" class="ref"></div>
+    <div class="section" data-aos="fade" data-aos-delay="200">
+      <svg class="shapes" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 250">
+        <circle cx="580" cy="50" r="60"></circle>
+        <circle cx="350" cy="230" r="90"></circle>
+        <circle cx="200" cy="10" r="65"></circle>
+      </svg>
+
+      <h2 v-html="$trans('footer.title')"></h2>
+      <div class="text" v-html="$trans('footer.text')"></div>
+
+      <div class="actions">
+        <a :href="contactLink" class="btn">
+          <span>{{ $trans("action.contactMe") }}</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/pier-gabriel-labb%C3%A9-774a43332/" target="_blank"
+          class="btn icon primary">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 76.624 65.326">
+            <path data-name="Path 2520"
+              d="M958.98,112.559h-9.6V97.525c0-3.585-.064-8.2-4.993-8.2-5,0-5.765,3.906-5.765,7.939v15.294h-9.6V81.642h9.216v4.225h.129a10.1,10.1,0,0,1,9.093-4.994c9.73,0,11.524,6.4,11.524,14.726ZM918.19,77.416a5.571,5.571,0,1,1,5.57-5.572,5.571,5.571,0,0,1-5.57,5.572m4.8,35.143h-9.61V81.642h9.61Zm40.776-55.2h-55.21a4.728,4.728,0,0,0-4.781,4.67v55.439a4.731,4.731,0,0,0,4.781,4.675h55.21a4.741,4.741,0,0,0,4.8-4.675V62.025a4.738,4.738,0,0,0-4.8-4.67"
+              transform="translate(-897.776 -57.355)" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" :class="{'opened': aboutOpened || projectOpened}"></div>
+
+    <!-- About Modal -->
+    <div id="about-modal" class="modal" :class="{'opened': aboutOpened}">
+      <div class="modal-header" @click="closeAbout()"></div>
+
+      <div class="modal-content">
+        <div class="sticky d-flex justify-between align-center gap-12">
+          <div>
+            <h2>{{ $trans("about.modalTitle") }}</h2>
+          </div>
+
+          <div class="modal-close" @click="closeAbout()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" viewBox="0 -960 960 960">
+              <path
+                d="M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="about-section">
+          <div>
+            <p>{{ $trans("about.experience") }}</p>
+          </div>
+
+          <div class="journey-list">
+            <template v-for="journey in ['fatfish', 'icz', 'iczStage']">
+              <div class="journey">
+                <p class="title">{{ $trans(`journey.${journey}.title`) }}</p>
+
+                <div class="subtitle">
+                  <p class="location">{{ $trans(`journey.${journey}.location`) }}</p>
+                  <p class="date">{{ $trans(`journey.${journey}.date`) }}</p>
+                </div>
+
+                <p class="text">{{ $trans(`journey.${journey}.text`) }}</p>
+              </div>
+            </template>
+          </div>
+        </div>
+
+        <div class="about-section">
+          <div>
+            <p>{{ $trans("about.education") }}</p>
+          </div>
+
+          <div class="journey-list">
+            <template v-for="journey in ['googleUX', 'cba']">
+              <div class="journey">
+                <p class="title">{{ $trans(`journey.${journey}.title`) }}</p>
+
+                <div class="subtitle">
+                  <p class="location">{{ $trans(`journey.${journey}.location`) }}</p>
+                  <p class="date">{{ $trans(`journey.${journey}.date`) }}</p>
+                </div>
+              </div>
+            </template>
+          </div>
+        </div>
+
+        <div class="about-section">
+          <div>
+            <p>{{ $trans("about.skills") }}</p>
+          </div>
+
+          <div class="journey-list">
+            <div class="journey">
+              <p class="title">{{ $trans("about.coding") }}</p>
+
+              <div class="tag-group mt-8">
+                <div class="tag">HTML</div>
+                <div class="tag">CSS</div>
+                <div class="tag">JavaScript</div>
+                <div class="tag">Vue.js</div>
+                <div class="tag">Wordpress</div>
+                <div class="tag">PHP</div>
+                <div class="tag">Git</div>
+                <div class="tag">GitHub</div>
+                <div class="tag">Bitbucket</div>
+                <div class="tag">PWA</div>
+              </div>
+            </div>
+
+            <div class="journey">
+              <p class="title">{{ $trans("about.design") }}</p>
+
+              <div class="tag-group mt-8">
+                <div class="tag">UI, UX</div>
+                <div class="tag">Wireframes</div>
+                <div class="tag">Prototypes</div>
+                <div class="tag">Responsive</div>
+                <div class="tag">Mobile</div>
+              </div>
+            </div>
+
+            <div class="journey">
+              <p class="title">{{ $trans("about.tools") }}</p>
+
+              <div class="tag-group mt-8">
+                <div class="tag">Figma</div>
+                <div class="tag">Photoshop</div>
+                <div class="tag">MS Office</div>
+                <div class="tag">Google Workspace</div>
+                <div class="tag">VS Code</div>
+                <div class="tag">IntelliJ IDEA</div>
+              </div>
+            </div>
+
+            <div class="journey">
+              <p class="title">{{ $trans("about.languages") }}</p>
+
+              <div class="tag-group mt-8">
+                <div class="tag">{{ $trans("language.fr") }}</div>
+                <div class="tag">{{ $trans("language.en") }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal" :class="{'opened': projectOpened}">
+      <div class="modal-header" @click="closeProject()"></div>
+
+      <div v-if="selectedProject" class="modal-content">
+        <div class="sticky d-flex justify-between align-center gap-12">
+          <div>
+            <h2>{{ $trans(`project.${selectedProject.key}.title`) }}</h2>
+            <p class="opacity-50">{{ $trans(`project.${selectedProject.key}.subtitle`) }}</p>
+          </div>
+
+          <div class="modal-close" @click="closeProject()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28px" height="28px" viewBox="0 -960 960 960">
+              <path
+                d="M480-424 284-228q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536-480l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480-424Z" />
+            </svg>
+          </div>
+        </div>
+
+        <div>
+          <div class="tag-group">
+            <template v-for="tag in selectedProject.tags ?? []">
+              <div class="tag">{{ $trans(`tag.${tag}`) }}</div>
+            </template>
+          </div>
+        </div>
+
+        <div v-html="$trans(`project.${selectedProject.key}.about`)" class="d-flex flex-column gap-28"></div>
+
+        <div v-html="$trans(`project.${selectedProject.key}.work`)" class="d-flex flex-column gap-28"></div>
+
+        <template v-for="image in selectedProject.images ?? []">
+          <div>
+            <img :src="`images/${selectedProject.key}/${image.src}`" :alt="image.alt ?? ''"
+              @click="window.open(`images/${selectedProject.key}/${image.src}`, '_blank')" style="cursor: zoom-in;">
+          </div>
+        </template>
+
+        <div>
+          <div class="item-grid">
+            <div>
+              <p class="weight-bold mb-4">{{ $trans("project.usedTech") }}</p>
+              <div class="tag-group">
+                <template v-for="tech in selectedProject.techs ?? []">
+                  <div class="tag grey">{{ tech }}</div>
+                </template>
+              </div>
+            </div>
+
+            <div>
+              <p class="weight-bold mb-4">{{ $trans("project.year") }}</p>
+              <div class="tag-group">
+                <div class="tag grey">{{ selectedProject.year }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div v-if="selectedProject.link || selectedProject.prototypeLink">
+          <div class="d-flex flex-wrap gap-12">
+            <a v-if="selectedProject.link" :href="selectedProject.link" target="_blank" class="btn primary"
+              :class="{'flex-grow-1': screen.mobile}">
+              {{ $trans("project.view") }}
+            </a>
+
+            <a v-if="selectedProject.prototypeLink" :href="selectedProject.prototypeLink" target="_blank" class="btn"
+              :class="{'flex-grow-1': screen.mobile}">
+              {{ $trans("project.viewPrototype") }}
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <div class="section d-flex flex-wrap flex-row justify-between align-center">
+            <div>
+              <h2 class="mb-8">{{ $trans("project.workTogether.title") }}</h2>
+
+              <div class="text">
+                <p>{{ $trans("project.workTogether.text") }}</p>
+              </div>
+            </div>
+
+            <div>
+              <a :href="contactLink" class="btn primary">
+                <span>{{ $trans("action.contactMe") }}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
+
 </html>
