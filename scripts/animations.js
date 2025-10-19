@@ -11,10 +11,20 @@ const header_animation = () => {
 };
 
 const page_animations = () => {
-  gsap.fromTo(".section, .projects > .project", { opacity: 0, yPercent: -5 }, { opacity: 1, yPercent: 0, duration: 1, ease: "expo.out", delay: 0.4, stagger: 0.1 });
+  gsap.set(".section, .projects > .project", { opacity: 0, yPercent: -5 });
+
+  ScrollTrigger.batch(".section, .projects > .project", {
+    onEnter: (batch) => {
+      gsap.to(batch, { opacity: 1, yPercent: 0, duration: 1, ease: "expo.out", delay: 0.4, stagger: 0.1 });
+    },
+    start: "top bottom",
+    once: true
+  });
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
   header_animation();
   page_animations();
 });
