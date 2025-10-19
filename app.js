@@ -41,17 +41,21 @@ PetiteVue.createApp({
   ],
 
   toggleMenu() {
-    this.menu = !this.menu;
-
     if (this.menu) {
-      this.preventScroll();
+      this.closeMenu();
     } else {
-      this.allowScroll();
+      this.openMenu();
     }
+  },
+  openMenu() {
+    this.menu = true;
+    this.preventScroll();
+    window.dispatchEvent(new CustomEvent("menuOpened"));
   },
   closeMenu() {
     this.menu = false;
     this.allowScroll();
+    window.dispatchEvent(new CustomEvent("menuClosed"));
   },
 
   contactLink: "mailto:piergabriel.labbe@gmail.com",

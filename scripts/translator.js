@@ -101,8 +101,8 @@ const $allTranslations = {
       viewPrototype: "Voir le prototype",
 
       workTogether: {
-        title: "Travaillons ensemble!",
-        text: "Vous aimez mon travail et vous souhaitez quelque chose de similaire?"
+        title: "Un projet en tête?",
+        text: "Si ça vous inspire, je serais ravi de collaborer avec vous!"
       }
     },
 
